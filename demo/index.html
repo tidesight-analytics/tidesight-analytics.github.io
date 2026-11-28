@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Tidesight · Live demo</title>
+  <meta name="description" content="Try Tidesight's dashboard on made-up data: it runs entirely in your browser.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="boot.css">
+  <script src="boot.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div id="demo-boot" class="demo-boot" role="status" aria-live="polite">
+    <div class="demo-boot-card">
+      <svg class="demo-boot-mark" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15.5" fill="none" stroke="#9fd1ff" stroke-opacity=".5"/><circle cx="17" cy="17" r="4" fill="#9fd1ff"/><path d="M3 22c3.5-3 7-3 10.5 0s7 3 10.5 0 7-3 7 0" fill="none" stroke="#e9eef3" stroke-width="1.6" stroke-linecap="round"/><path d="M5 26.5c3-2.4 6-2.4 9 0s6 2.4 9 0 4.5-2 6 0" fill="none" stroke="#9fd1ff" stroke-width="1.2" stroke-linecap="round" opacity=".7"/></svg>
+      <p class="demo-boot-kicker">Tidesight · live demo</p>
+      <h1>Starting Tidesight in your browser</h1>
+      <div class="demo-boot-bar"><i id="demo-boot-fill"></i></div>
+      <p id="demo-boot-step" class="demo-boot-step">Loading Python (WebAssembly)…</p>
+      <p class="demo-boot-note">Tidesight's own dashboard and Python API, running on this page with made-up data for three websites. Nothing is sent anywhere. The first visit downloads about 13 MB.</p>
+    </div>
+  </div>
+  <div class="login" id="login" hidden></div>
+  <div class="shell" id="shell">
+    <aside class="rail" aria-label="Navigation">
+      <a class="brand" href="#/overview">
+        <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true">
+          <circle cx="17" cy="17" r="15.5" fill="none" stroke="#9fd1ff" stroke-opacity=".5"/>
+          <circle cx="17" cy="17" r="4" fill="#9fd1ff"/>
+          <path class="wave" d="M3 22c3.5-3 7-3 10.5 0s7 3 10.5 0 7-3 7 0" fill="none" stroke="#e9eef3" stroke-width="1.6" stroke-linecap="round"/>
+          <path class="wave" d="M5 26.5c3-2.4 6-2.4 9 0s6 2.4 9 0 4.5-2 6 0" fill="none" stroke="#9fd1ff" stroke-width="1.2" stroke-linecap="round" opacity=".7"/>
+        </svg>
+        <span class="brand-name">Tidesight<small>Analytics</small></span>
+      </a>
+      <div class="site-picker" id="site-picker"></div>
+      <nav class="nav" id="nav"></nav>
+      <div class="rail-foot">
+        <div id="rail-user"></div>
+        <button id="theme" type="button" class="theme-btn" aria-label="Switch theme" title="Switch theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 109 9 7 7 0 01-9-9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </button>
+        <span id="version"></span>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title" id="title">Overview</h1>
+          <p class="page-sub" id="subtitle"></p>
+        </div>
+        <div class="head-tools" id="head-tools"></div>
+      </div>
+      <div class="filters" id="filters" role="toolbar" aria-label="Period, filters and export"></div>
+      <section id="view" aria-live="polite"></section>
+      <p class="foot-credit" id="credit"></p>
+    </main>
+  </div>
+</body>
+</html>

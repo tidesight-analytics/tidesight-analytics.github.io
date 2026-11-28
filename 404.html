@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tidesight</title>
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      var match = path.match(/^\/tidesight(?:\/(.*))?$/i);
+      if (match) {
+        var sub = match[1] || '';
+        window.location.replace("https://tidesight-analytics.github.io/" + sub + window.location.search + window.location.hash);
+        return;
+      }
+      window.location.replace("https://tidesight-analytics.github.io/");
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="https://tidesight-analytics.github.io/">tidesight-analytics.github.io</a>...</p>
+</body>
+</html>
